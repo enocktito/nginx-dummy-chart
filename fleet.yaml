@@ -1,0 +1,13 @@
+defaultNamespace: default
+helm:
+  releaseName: nginx-dev
+  atomic: true
+  timeoutSeconds: 180
+targetCustomizations:
+- name: dev
+  clusterSelector:
+    matchLabels:
+      env: dev-enock
+  helm:
+    valuesFiles:
+      - values.yaml
